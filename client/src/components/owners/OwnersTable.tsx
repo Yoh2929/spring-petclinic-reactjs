@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { Link } from 'react-router';
 import { IOwner } from '../../types';
 
 type SortKey = 'name' | 'address' | 'city' | 'telephone' | 'pets';
@@ -34,9 +35,9 @@ const getOwnerSortValue = (owner: IOwner, key: SortKey) => {
 const renderRow = (owner: IOwner) => (
   <tr key={owner.id}>
     <td>
-      <a href={`/owners/${owner.id}`}>
+      <Link to={`/owners/${owner.id}`}>
         {owner.firstName} {owner.lastName}
-      </a>
+      </Link>
     </td>
     <td className='hidden-sm hidden-xs'>{owner.address}</td>
     <td>{owner.city}</td>

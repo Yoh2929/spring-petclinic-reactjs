@@ -1,8 +1,10 @@
 import * as React from 'react';
 
+import { Link } from 'react-router';
+
 const MenuItem = ({active, url, title, children}: { active: boolean, url: string, title: string, children?: any }) => (
   <li className={active ? 'active' : ''}>
-    <a href={url} title={title}>{children}</a>
+    <Link to={url} title={title}>{children}</Link>
   </li>
 );
 
@@ -10,7 +12,7 @@ export default ({name}: { name: string }) => (
   <nav className='navbar navbar-default' role='navigation'>
     <div className='container'>
       <div className='navbar-header'>
-        <a className='navbar-brand' href='/'><span></span></a>
+        <Link className='navbar-brand' to='/'><span></span></Link>
         <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='#main-navbar'>
           <span className='icon-bar'></span>
           <span className='icon-bar'></span>
